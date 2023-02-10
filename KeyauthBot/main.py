@@ -24,7 +24,7 @@ async def on_ready():
     print(f"Logged in as {client.user.name}")
     print(f"Bot developer id: {client.user.id}")
     print(f"Using guild: {client.guilds[0].name}")
-    await client.change_presence(activity=discord.Game(name="Devloper of this bot | $name#1000"))
+    await client.change_presence(activity=discord.Game(name="keyauth bot | made by $name#1000"))
 
 
 @client.slash_command(name="help", description="List of commands")
