@@ -40,7 +40,7 @@ async def clear(ctx, limit: int):
             await ctx.respond(f'channel has been cleard by {ctx.author.mention}')
             await ctx.message.delete()
         else:
-             embed = discord.Embed(title="**Failed to kick user!**", description=f"❌ Sorry! {ctx.author.mention}, you don't have permissions to execute this command!", color=0xe74c3c)
+             embed = discord.Embed(title="**Failed to clean channel**", description=f"❌ Sorry! {ctx.author.mention}, you don't have permissions to execute this command!", color=0xe74c3c)
              await ctx.respond(embed=embed)
 
 @client.slash_command(name="kick", description="Kick members from the server")
