@@ -131,6 +131,8 @@ async def claim(ctx,license):
 		if req.json()["success"] == True:
 			expire = req.text.split('"expiry":"')[1].split('"')[0]
 			expire = datetime.utcfromtimestamp(int(expire)).strftime('%Y-%m-%d %H:%M:%S')
+			role = discord.utils.get(ctx.guild.roles, name='customer')
+                	await ctx.author.add_roles(role)
 			
 			await ctx.send(embed=discord.Embed(title="**License Activated**",description=f"{ctx.author.mention}, your key has been redeemed successfully!"))
 			embed=discord.Embed(title="**Successfully redeemed license**", description=f"{ctx.author.mention}, thank you for Activated your license key! this is the information\n\nusername: {username}\npassword: {password}\nlicense key: {license}\nexpire in {expire}")
