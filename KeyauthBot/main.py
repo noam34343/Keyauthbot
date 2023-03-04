@@ -172,14 +172,7 @@ async def genkey(ctx,day:int):
 
 
 
-@client.slash_command(name="genkey", description="generate key")
-async def genkey(ctx,day:int):
-    req = requests.get(f"https://keyauth.win/api/seller/?sellerkey={'8b26f1fb2a208c30adbcb1b7530be145'}&type=add&expiry={day}&mask=LICENSEKEY-XXXXXX-XXXXXX&level=1&amount=1&format=json")
-    if req.json()["success"] == True:
-        key = req.json()["key"]
-        embed1=discord.Embed(title="**Successfully generated key!**",description=f"**this is your license key:** {key}",color=0x2ecc71)
-        await ctx.author.send(embed=embed1)
-        await ctx.send(f"{ctx.author.mention}, **Successfully generated key!, check your dms!**")
+
         
        
 
