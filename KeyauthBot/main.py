@@ -17,7 +17,7 @@ except Exception:
 client = discord.Bot()
 
 
-selletrkey = 'sellerkey here'
+sellerkey = 'sellerkey here'
 
 @client.event
 async def on_ready():
